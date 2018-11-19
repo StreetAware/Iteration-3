@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Style">
+        <menu>
+            <item
+                android:id="@+id/nav_articles"
+                android:icon="@drawable/articles_nav_bar"
+                android:title="Articles" />
+            <item
+                android:id="@+id/nav_cop_the_fit"
+                android:icon="@drawable/cop_the_fit_nav_bar"
+                android:title="Cop The Fit"/>
+            <item
+                android:id="@+id/nav_rate_my_fit"
+                android:icon="@drawable/rate_my_fit_nav_bar"
+                android:title="Rate My Fit"/>
+        </menu>
+    </item>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/settings_nav_drawer"
+                android:title="Settings" />
+            <item
+                    android:id="@+id/nav_about_us"
+                    android:icon="@drawable/about_us_nav_bar"
+                    android:title="About Us"/>
+            <item
+                    android:id="@+id/nav_privacy_policy"
+                    android:icon="@drawable/privacy_policy_nav_bar"
+                    android:title="Privacy Policy"/>
+        </menu>
+    </item>
+</menu>

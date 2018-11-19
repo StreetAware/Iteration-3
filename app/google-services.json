@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "179523487597",
+    "firebase_url": "https://streetaware-8b985.firebaseio.com",
+    "project_id": "streetaware-8b985",
+    "storage_bucket": "streetaware-8b985.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179523487597:android:a0603f754be72702",
+        "android_client_info": {
+          "package_name": "com.example.gearo.streetawarev1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179523487597-jaa4kqfsf7le3kut2v424r3hdm19eecr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gearo.streetawarev1",
+            "certificate_hash": "c7a2f21d7df182144a60afd84d2ea0bfaf1eda42"
+          }
+        },
+        {
+          "client_id": "179523487597-5sai0us6cand0tle1j2poluaoituqp37.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPc_rwtg6lQnhTFIgg74-3h50eF75v6Ic"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179523487597-5sai0us6cand0tle1j2poluaoituqp37.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
