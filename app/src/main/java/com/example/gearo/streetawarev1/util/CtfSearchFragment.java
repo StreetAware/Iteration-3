@@ -12,12 +12,12 @@ import com.example.gearo.streetawarev1.R;
 
 public class CtfSearchFragment extends Fragment {
 
-    private static final String TAG = "CtfSeachFragment";
+    private static final String TAG = "CtfSearchFragment";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frament_ctf_search, container,false);
+        View view = inflater.inflate(R.layout.fragment_ctf_search, container,false);
 
         return view;
     }

@@ -31,6 +31,9 @@
     <string name="fragment_favourites">Favourites</string>
     <string name="fragment_post">Post</string>
 
+    <!-- Dialog names -->
+    <string name="dialog_select_photo">Select Photo</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nav_home">Home</string>

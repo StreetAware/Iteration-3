@@ -17,7 +17,7 @@ public class CtfFavouritesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frament_ctf_favourites, container,false);
+        View view = inflater.inflate(R.layout.fragment_ctf_favourites, container,false);
 
         return view;
     }

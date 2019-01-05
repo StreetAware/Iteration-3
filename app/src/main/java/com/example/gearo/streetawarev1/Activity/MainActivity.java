@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.flMain, new ArticlesFragment()); //Replacing the frame layout I set with the articles fragment
             ft.commit();
         } else if (id == R.id.nav_cop_the_fit) {
-            Intent a = new Intent(MainActivity.this, CTF_SearchActivity.class);
+            Intent a = new Intent(MainActivity.this, CTF_Activity.class);
             startActivity(a);
         } else if (id == R.id.nav_rate_my_fit) {
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
