@@ -20,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.gearo.streetawarev1.R;
+import com.example.gearo.streetawarev1.models.CtfPost;
+import com.example.gearo.streetawarev1.util.UniversalImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -59,7 +61,7 @@ public class CtfPostFragment extends Fragment implements SelectPhotoDialog.OnPho
 
     //widgets
     private ImageView mPostImage;
-    private EditText mTitle, mDescription, mPrice, mCountry, mStateProvince, mCity, mContactEmail;
+    private EditText mTitle, mDescription, mCountry, mStateProvince, mContactEmail;
     private Button mPost;
     private ProgressBar mProgressBar;
 
@@ -68,7 +70,7 @@ public class CtfPostFragment extends Fragment implements SelectPhotoDialog.OnPho
     private Uri mSelectedUri;
 
     private byte[] mUploadBytes;
-    private double mProgress;
+    private double mProgress = 0;
 
 
     @Nullable
@@ -129,11 +131,16 @@ public class CtfPostFragment extends Fragment implements SelectPhotoDialog.OnPho
     }
 
     private void UploadNewPhoto(Bitmap bitmap){
-
+        Log.d(TAG, "uploadNewPhoto: uploading a new image bitmap to storage");
+        BackgroundImageResize resize = new BackgroundImageResize(bitmap);
+        Uri uri = null;
+        resize.execute(uri);
     }
 
     private void UploadNewPhoto(Uri imagePath){
-
+        Log.d(TAG, "uploadNewPhoto: uploading a new image uri to storage.");
+        BackgroundImageResize resize = new BackgroundImageResize(null);
+        resize.execute(imagePath);
     }
 
     public class BackgroundImageResize extends AsyncTask<Uri, Integer, byte[]>{
@@ -178,6 +185,7 @@ public class CtfPostFragment extends Fragment implements SelectPhotoDialog.OnPho
             mUploadBytes = bytes;
             hideProgressBar();
             //execute the upload task
+            executeUploadTask();
         }
     }
 
@@ -203,6 +211,21 @@ public class CtfPostFragment extends Fragment implements SelectPhotoDialog.OnPho
                 Log.d(TAG, "onSuccess: firebase download url: " + firebaseUri.toString());
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
+                CtfPost post = new CtfPost();
+                post.setImage(firebaseUri.toString());
+                post.setContact_email(mContactEmail.getText().toString());
+                post.setCountry(mContactEmail.getText().toString());
+                post.setDescription(mDescription.getText().toString());
+                post.setPost_id(postId);
+                post.setState_province(mStateProvince.getText().toString());
+                post.setTitle(mTitle.getText().toString());
+                post.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                reference.child(getString(R.string.node_posts))
+                        .child(postId)
+                        .setValue(post);
+
+                resetFields();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

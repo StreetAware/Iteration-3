@@ -58,7 +58,7 @@ public class CTF_Activity extends AppCompatActivity {
     }
 
     private void verifyPermissions(){
-        Log.d(TAG, "verifyPermissions: asking user for permission");
+        Log.d(TAG, "verifyPermissions: asking user for permissions");
         String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.CAMERA};
